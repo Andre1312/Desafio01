@@ -22,39 +22,29 @@ public class MaiorPalavra {
 	}
 
 	private static void mostraMaiorPalavra(String texto) {
-		// 
-		if (texto==null || texto.isEmpty()){
-			return ;
+		//
+		
+		String[] palavras = texto.split(" ");
+		
+		String maiorPalavra = "";
+		
+		
+        
+		for (String palavra : palavras) {
+			
+			if (palavra.length() > maiorPalavra.length()) {
+	              maiorPalavra = palavra;
+	          }
+			
 		}
-		// inicializa contador e zera, flag ehPalavra=false
-		int contaPalavra = 0;
-		boolean ehPalavra = false;
-		boolean ehLetra = false;
-		//
-		int contaLetra = 0;
-		int inicioLetra = 0;
-		String palavra = null;
 		
-		//
-		for(int i=0; i<texto.length(); i++){
-			
-			// se eh espaço , não ehPalavra
-			if (texto.charAt(i)==' ') {
-				ehPalavra = false;
-						
-			}else if (ehPalavra == false){
-				
-				// se não eh espaço, ehPalavra e incrementa contador de palavras
-				ehPalavra = true;
-				contaPalavra++;
-			}
-			//
-							
-			}
-			
+		System.out.println(maiorPalavra+" é a mais longa palavra com "+maiorPalavra.length()+" caracteres");
 		
-		System.out.println("Maior Palavra = " + palavra);
+        
 	}
+	
+
+
 
 	/**
 	 * Retorna texto do teclado
